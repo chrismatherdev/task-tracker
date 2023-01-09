@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
-import Header from "./components/Header";
-import Tasks from "./components/Tasks";
+import Header from "./components/header";
+import Tasks from "./components/tasks";
 
 export default function App() {
   const [tasks, setTasks] = useState([
@@ -26,12 +26,10 @@ export default function App() {
     }
   ]);
 
-  // Delete Task
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  // Toggle Reminder
   const toggleReminder = (id) => {
     setTasks(
       tasks.map((task) =>
